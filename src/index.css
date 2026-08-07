@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #976147;
+  --color-primary-dark: #7a4f3a;
+  --color-primary-light: #b4856b;
+  --font-serif: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary: #976147;
+  --primary-dark: #7a4f3a;
+  --primary-light: #b4856b;
+  --bg-soft: #fcfcfc;
+  --text-main: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-soft);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  width: 100%;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h1 {
+  /* font-size: 64px !important; */
+  /* font-weight: 800; */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  line-height: 1.2;
+}
+
+
+
+p {
+  line-height: 1.7;
+  /* color: #666; */
+}
+
+/* Replicating Replit style buttons */
+.re-btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 400;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.re-btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(151, 97, 71, 0.2);
+}
+
+.re-btn-outline {
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  padding: 10px 24px;
+  border-radius: 50px;
+  /* font-weight: 400; */
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.re-btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--primary)/5;
+}
+
+/* Section label in orange */
+.re-label {
+  color: var(--primary);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Stat badge */
+.re-stat-badge {
+  background-color: var(--primary);
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  box-shadow: 0 15px 30px rgba(151, 97, 71, 0.3);
+  text-align: left;
+  min-width: 140px;
+}
+
+.re-stat-num {
+  font-size: 36px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1;
+}
+
+.re-stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+/* Image rounding */
+.re-rounded-lg {
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reveal-zoom {
+  animation: zoomIn 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Specific classes to prevent animation fighting */
+@media (max-width: 767px) {
+  .mobile-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-fade-in {
+    animation: fadeInUp 0.4s ease-out forwards;
+  }
+}
+
+@keyframes simpleFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-simpleFade {
+  animation: simpleFade 0.4s ease-out forwards;
+}
+
+/* Navbar Scrolled */
+.nav-scrolled {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 12px 0 !important;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Hide scroll-to-top button when menu/modals are open */
+body.overflow-hidden .scroll-to-top {
+  display: none !important;
+}
