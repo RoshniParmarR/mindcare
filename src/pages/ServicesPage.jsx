@@ -277,7 +277,7 @@ const ServicesPage = ({ onOpenModal }) => {
         {/* Earthy-toned Wildflower Border - Horizontal bottom alignment */}
         <div className="absolute left-0 right-0 bottom-0 h-[220px] md:h-[300px] lg:h-[360px] opacity-[0.14] pointer-events-none select-none overflow-hidden">
           <img
-            src="/earthy_floral_border.png"
+            src="./earthy_floral_border.png"
             alt="earthy flower border"
             className="w-full h-full rotate-180 object-cover object-bottom scale-[1.8] translate-y-[30%] md:scale-[1.4] md:translate-y-[15%] lg:scale-100 lg:translate-y-0 transition-transform duration-1000"
           />
